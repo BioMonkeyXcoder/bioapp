@@ -4,9 +4,10 @@ BioApp is a Windows desktop application for analyzing experimental data and prep
 
 ## Run on Windows (x64)
 
-1. Open **Releases** in this repository. Under **BioApp 0.1.0 → Assets**, download `bioapp-0.1.0-windows-x64.zip`.
-2. Right-click the ZIP, choose **Extract All**, and open the extracted `bioapp` folder.
-3. Double-click `bioapp.exe`. Keep it alongside the `_internal` folder, which contains Python, Qt, and the analysis libraries.
+1. On Windows 10 or 11 (x64), install the latest **Microsoft Visual C++ v14 Redistributable (x64)** once. Download `vc_redist.x64.exe` from Microsoft's official address, `https://aka.ms/vc14/vc_redist.x64.exe`. Run it, select **Install** if offered, and restart Windows if prompted. If the current x64 runtime is already installed, continue to step 2.
+2. Open **Releases** in this repository. Under **BioApp 0.1.0 → Assets**, download `bioapp-0.1.0-windows-x64.zip`.
+3. Right-click the ZIP, choose **Extract All**, and open the extracted `bioapp` folder.
+4. Double-click `bioapp.exe`. Keep it alongside the `_internal` folder, which contains Python, Qt, and the analysis libraries.
 
 The portable package runs without a separate Python installation, virtual environment, or activation key. The GitHub **Source code (zip)** download is for developers.
 

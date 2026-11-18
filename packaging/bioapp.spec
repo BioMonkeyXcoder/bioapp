@@ -2,6 +2,10 @@
 # Run from the project root:
 #   pyinstaller --noconfirm --workpath <workspace>\intermediate\pyinstaller --distpath <workspace>\output\dist packaging\bioapp.spec
 from pathlib import Path
+import sys
+
+sys.path.insert(0, SPECPATH)
+from windows_runtime import prepare_collection
 
 root = Path(SPECPATH).parent
 
@@ -33,6 +37,8 @@ a = Analysis(
 a.datas = [d for d in a.datas if "/tests/" not in d[0].replace("\\", "/")]
 a.pure = [p for p in a.pure if ".tests." not in p[0]]
 
+a.binaries = prepare_collection(a.binaries, workpath)
+a.datas = prepare_collection(a.datas, workpath)
 pyz = PYZ(a.pure)
 exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name="bioapp", console=False, upx=False,
           icon=str(root / "bioapp" / "ui" / "bioapp.ico"))
